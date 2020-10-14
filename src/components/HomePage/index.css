@@ -1,0 +1,116 @@
+* {
+  font-family: "Epilogue", sans-serif;
+}
+
+/* Base da tabela */
+table {
+  margin-top: 20px;
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #e9dfd885;
+}
+
+a:link,
+a:visited {
+  color: black;
+  padding: 4px 8px;
+  display: inline-block;
+}
+a:hover {
+  background-color: #f44336;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.table {
+  border-bottom: #d0d5d8 solid 1px;
+  width: 80%;
+  margin-bottom: 1px;
+}
+img {
+  max-height: 90px;
+  max-width: 30%;
+}
+.table th,
+.table td {
+  border-right: #d0d5d8 solid 1px;
+  padding: 15px 15px;
+  line-height: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table td:last-child {
+  border-right: 0;
+}
+
+.table tbody td {
+  font-size: 16px;
+  text-align: center;
+}
+.table thead th {
+  font-weight: normal;
+  background-color: rgb(129, 127, 127);
+
+  font-size: 22px;
+  text-align: center;
+}
+
+/* Tornando a tabela responsiva*/
+
+/* para resoluções de até 767px */
+@media (max-width: 767px) {
+  /* Tabela responsiva */
+  .table-responsive {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  /*  Tabela funcionando como um bloco  */
+  .table-responsive thead,
+  .table-responsive tbody,
+  .table-responsive th,
+  .table-responsive td,
+  .table-responsive tr {
+    display: block;
+  }
+  /* Defino um tamanho para as células */
+  .table-responsive td,
+  .table-responsive th {
+    height: 35px;
+  }
+  .table thead th {
+    font-size: 16px;
+  }
+  .table th,
+  .table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+  /* thead é “flotado” esquerda para auxiliar na responsividade */
+  .table-responsive thead {
+    float: left;
+  }
+
+  .table-responsive tbody {
+    width: auto;
+    position: relative;
+
+    overflow-x: auto; /* scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Funcionamento para dispositivos touch */
+    white-space: nowrap;
+  }
+  /*  Posicionando linhas lado-a-lado  */
+  .table-responsive tbody tr {
+    display: inline-block;
+  }
+
+  .table td:last-child {
+    border-right: #fff solid 1px;
+  }
+}
