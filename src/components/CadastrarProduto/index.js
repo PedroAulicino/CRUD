@@ -3,7 +3,8 @@ import { Link, useHistory } from "react-router-dom";
 
 import * as Yup from "yup";
 import { Form, Input } from "@rocketseat/unform";
-import Api from "Services/api";
+
+import Axios from "axios";
 
 const schema = Yup.object().shape({
   nome_produto: Yup.string().required("Nome do Produto obrigatorio"),
@@ -23,7 +24,7 @@ const Formulario = () => {
   }
 
   async function onSubmit() {
-    await Api.post("/produtos", values).then(() => {
+    await Axios.post("http://localhost:3333/produtos", values).then(() => {
       history.push("/");
     });
   }
