@@ -10,7 +10,7 @@ const schema = Yup.object().shape({
   nome_produto: Yup.string().required("Nome do Produto obrigatorio"),
   descricao: Yup.string().required("Descrição Obrigatoria"),
   preco_produto: Yup.string().required("Preço é obrigatorio"),
-  quantidade_produto: Yup.string().required("Quantidade obrigatoria"),
+  quantidade_produto: Yup.string().required("Quantidade obrigatorio"),
 });
 
 const Formulario = () => {

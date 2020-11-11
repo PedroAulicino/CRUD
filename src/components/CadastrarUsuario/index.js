@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Input } from "antd";
-import Api from "Services/api";
+
+import Axios from "axios";
 
 const LoginUser = () => {
   const [nome, setNome] = useState("");
@@ -18,7 +19,7 @@ const LoginUser = () => {
       tipo_usuario: tipo,
     };
 
-    await Api.post("/usuarios", data);
+    await Axios.post("http://localhost:3333/usuarios", data);
     alert("Usuario Cadastrado com Sucesso");
     history.push("/");
   }
