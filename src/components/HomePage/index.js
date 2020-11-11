@@ -8,17 +8,19 @@ const Home = () => {
   const [busca, setBusca] = useState("");
 
   useEffect(() => {
-    const params = {};
-
-    if (busca) {
-      params.id = busca;
-    }
-
     loadUsers();
   }, [busca]);
 
+  const params = {};
+
+  if (busca) {
+    params.nome_produto = busca;
+  }
+
   const loadUsers = async () => {
-    const result = await axios.get("http://localhost:3333/api/produtos");
+    const result = await axios.get("http://localhost:3333/api/produtos", {
+      params,
+    });
     setPromotions(result.data);
     console.log(result.data);
   };
